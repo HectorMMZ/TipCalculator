@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipCalculator.Maui.Views.MainPage"
+             Title="Calculadora de Propinas">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24,0"
+            Spacing="24">
+            <Border
+                Stroke="Gray">
+                <Grid
+                    RowDefinitions="*,*,*,*"
+                    ColumnDefinitions="Auto,Auto,*"
+                    Padding="16"
+                    RowSpacing="8"
+                    ColumnSpacing="4">
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="Importe: "
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"/>
+                    <Entry
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="{Binding Path=ImporteDelConsumo}" 
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="WhiteSmoke"
+                        TextColor="Black"/>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Text="# de personas: "
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"/>
+                    <Entry
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Text="{Binding Path=NumeroDePersonas}"
+                        BackgroundColor="WhiteSmoke"
+                        TextColor="Black"/>
+                    <Stepper
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Minimum="1"
+                        Maximum="10"
+                        Increment="1"
+                        Value="{Binding Path=NumeroDePersonas}"/>
+                    <HorizontalStackLayout
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        HorizontalOptions="Center"
+                        Spacing="16"
+                        Margin="8">
+                        <Button
+                            Text="8%"
+                            WidthRequest="75"
+                            Command="{Binding Path=PorcentajeDePropinaCommand}"
+                            CommandParameter="8"/>
+                        <Button
+                            Text="10%"
+                            WidthRequest="75"
+                            Command="{Binding Path=PorcentajeDePropinaCommand}"
+                            CommandParameter="10"/>
+                        <Button
+                            Text="12.5%"
+                            WidthRequest="75"
+                            Command="{Binding Path=PorcentajeDePropinaCommand}"
+                            CommandParameter="12.5"/>
+                        <Button
+                            Text="15%"
+                            WidthRequest="75"
+                            Command="{Binding Path=PorcentajeDePropinaCommand}"
+                            CommandParameter="15"/>
+                    </HorizontalStackLayout>
+
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Text="% de propina: "
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"/>
+                    <Entry
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Text="{Binding Path=PorcentajeDePropina}"
+                        BackgroundColor="WhiteSmoke"
+                        TextColor="Black"/>
+                    <Stepper
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        Minimum="0"
+                        Maximum="50"
+                        Increment="0.5"
+                        Value="{Binding Path=PorcentajeDePropina}"/>
+                </Grid>
+            </Border>
+            
+            <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Spacing="24"
+                Margin="8">
+                <Button
+                    Text="Calcular"
+                    WidthRequest="100"
+                    Command="{Binding Path=CalcularCommand}"/>
+                <Button
+                    Text="Limpiar"
+                    WidthRequest="100"
+                    Command="{Binding Path=LimpiarCommand}"/>
+            </HorizontalStackLayout>
+            
+            <Border
+                Stroke="Gray">
+                <Border.StrokeShape>
+                    <RoundRectangle
+                        CornerRadius="7"/>
+                </Border.StrokeShape>
+                <Grid
+                    RowDefinitions="*,*,*,*,*"
+                    ColumnDefinitions="*,Auto"
+                    Padding="16"
+                    RowSpacing="4"
+                    ColumnSpacing="4">
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="Importe de consumo por persona:"
+                        HorizontalTextAlignment="Start"/>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalTextAlignment="End"
+                        Text="{Binding Path=ImporteDelConsumoPorPersona}"/>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Text="Importe de la propina"/>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalTextAlignment="End"
+                        Text="{Binding Path=ImportePropina}"/>
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Text="Propina por persona: "/>
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        HorizontalTextAlignment="End"
+                        Text="{Binding Path=ImportePropinaPorPersona}"/>
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Text="Importe total con propina: "/>
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        HorizontalTextAlignment="End"
+                        Text="{Binding Path=ImporteDelConsumoConPropina}"/>
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Text="Importe con propina por persona: "/>
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        HorizontalTextAlignment="End"
+                        Text="{Binding Path=ImporteDelConsumoConPropinaPorPersona}"/>
+                </Grid>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
