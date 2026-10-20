@@ -57,22 +57,22 @@
                         <Button
                             Text="8%"
                             WidthRequest="75"
-                            Command="{Binding Path=PorcentajeDePropinaCommand}"
+                            Command="{Binding Path=ActualizarPorcentajeDePropinaCommand}"
                             CommandParameter="8"/>
                         <Button
                             Text="10%"
                             WidthRequest="75"
-                            Command="{Binding Path=PorcentajeDePropinaCommand}"
+                            Command="{Binding Path=ActualizarPorcentajeDePropinaCommand}"
                             CommandParameter="10"/>
                         <Button
                             Text="12.5%"
                             WidthRequest="75"
-                            Command="{Binding Path=PorcentajeDePropinaCommand}"
+                            Command="{Binding Path=ActualizarPorcentajeDePropinaCommand}"
                             CommandParameter="12.5"/>
                         <Button
                             Text="15%"
                             WidthRequest="75"
-                            Command="{Binding Path=PorcentajeDePropinaCommand}"
+                            Command="{Binding Path=ActualizarPorcentajeDePropinaCommand}"
                             CommandParameter="15"/>
                     </HorizontalStackLayout>
 
@@ -105,11 +105,11 @@
                 <Button
                     Text="Calcular"
                     WidthRequest="100"
-                    Command="{Binding Path=CalcularCommand}"/>
+                    Command="{Binding Path=CalcularPropinaCommand}"/>
                 <Button
                     Text="Limpiar"
                     WidthRequest="100"
-                    Command="{Binding Path=LimpiarCommand}"/>
+                    Command="{Binding Path=LimpiarDatosCommand}"/>
             </HorizontalStackLayout>
             
             <Border
